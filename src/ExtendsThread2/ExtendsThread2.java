@@ -1,5 +1,5 @@
 
-package ExtendsThreads1;
+package ExtendsThread2;
 
 import java.util.Scanner;
 
@@ -7,17 +7,16 @@ import java.util.Scanner;
  *
  * @author 20201pf.cc0050
  */
-public class ExtendsThreads1 extends Thread {
-    public ExtendsThreads1(String textoOperacao) {
-        super(textoOperacao);
+
+public class ExtendsThread2 extends Thread {
+    
+    public ExtendsThread2(String operacao) {
+        super(operacao);
     }
     
     public void run() {
         try {
             Scanner entrada = new Scanner(System.in); // Cria uma instância da classe Scanner.
-            
-            //System.out.println("Informe a operação: ");
-            //String texto = entrada.nextLine(); // Lê uma string e atribui a variável "texto".
             
             System.out.println("Informe o primeiro número: ");
             String numero1 = entrada.nextLine();
@@ -32,7 +31,16 @@ public class ExtendsThreads1 extends Thread {
             if(this.getName() == "S") {
                 resultadoOperacao = numeroConvertido1 + numeroConvertido2;
                 System.out.println("Resultado: " + resultadoOperacao);
-            } //else if()
+            } else if(this.getName() == "Sub") {
+                resultadoOperacao = numeroConvertido1 - numeroConvertido2;
+                System.out.println("Resultado: " + resultadoOperacao);
+            } else if(this.getName() == "M") {
+                resultadoOperacao = numeroConvertido1 * numeroConvertido2;
+                System.out.println("Resultado: " + resultadoOperacao);
+            } else if(this.getName() == "D") {
+                resultadoOperacao = numeroConvertido1 / numeroConvertido2;
+                System.out.println("Resultado: " + resultadoOperacao);
+            }
             
         } catch (Exception e) {
             e.printStackTrace();
